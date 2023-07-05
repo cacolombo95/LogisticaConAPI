@@ -41,13 +41,12 @@ createApp({
       input.disabled = true;
       let search = this.search;
       data = this.seguimiento;
-      var found = false;
       var coincidencia = [];
       
       for (i=0;i<data.length;i++) {
         if (data[i].id == search) {
           coincidencia = data[i];
-          found = true;
+
 
           const uno = document.querySelector(".uno");
           const dos = document.querySelector(".dos");
@@ -91,14 +90,16 @@ createApp({
         }
 
 
-        if (coincidencia.length < 1) {
-          const error = document.getElementById("error");
-          error.textContent = `El código ingresado es INCORRECTO`;
-          error.style.display = "flex";
-          error.style.justifyContent = "center";
-          error.style.borderRadius = "8px";
-          error.style.backgroundColor = "yellow";
-        }
+
+      }
+      const found = data.find(elemento => elemento.id == search );
+      if (found == undefined) {
+        const error = document.getElementById("error");
+        error.textContent = `El código ingresado es INCORRECTO`;
+        error.style.display = "flex";
+        error.style.justifyContent = "center";
+        error.style.borderRadius = "8px";
+        error.style.backgroundColor = "yellow";
       }
       
     },
