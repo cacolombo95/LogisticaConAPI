@@ -20,7 +20,7 @@ boton.addEventListener("click", (e) => {
     console.log(Datos);
 
     if (Datos.C == "Empleado" && Datos.U == "UsuarioDeEmpleado" ){
-        window.location = "../API/index.html";
+        window.location = "../API/API.html";
 
 
     }else{
